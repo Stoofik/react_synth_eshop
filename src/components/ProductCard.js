@@ -1,4 +1,3 @@
-import defaultImg from "../static/images/synth_glasses.png"
 import PropTypes from 'prop-types'
 
 const ProductCard = ({title, image, price, stock}) => {
@@ -12,10 +11,10 @@ const ProductCard = ({title, image, price, stock}) => {
             </div>
             <div className="bottom-card-navigation">
                 <div className="buy-text-container">
-                    Buy
+                    <button>Buy</button> 
                 </div>
                 <div className="detail-text-container">
-                    Detail
+                    <button><a href="/product">Detail</a></button>
                 </div>
             </div>
         </div>

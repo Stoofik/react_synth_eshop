@@ -84,6 +84,43 @@ a {
   }
 }
 
+button.btn {
+  width: 8rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    font-size: 1.6rem;
+    transition: 100ms ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    background: rgba(9, 255, 0, 0.8);
+    position: absolute;
+    top: 90%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(3em) rotateX(30deg) scale(1.1, 1);
+    filter: blur(2em);
+    opacity: 0.5;
+  }
+
+  &:nth-child(2)::after {
+    background: rgba(255, 0, 0, 0.8) !important;
+  }
+
+  &:hover::after {
+    opacity: 0.8;
+    filter: blur(1em);
+  }
+}
+
 section.products-section {
   display: flex;
   flex-wrap: wrap;
@@ -127,8 +164,6 @@ section.products-section {
         height: 100%;
         width: 100%;
         background: rgba(9, 255, 0, 0.9);
-        text-transform: uppercase;
-        cursor: pointer;
         @include flexCenter();
       }
 
@@ -137,9 +172,20 @@ section.products-section {
         background: rgba(0, 250, 250, 0.9);
         height: 100%;
         width: 100%;
-        text-transform: uppercase;
-        cursor: pointer;
         @include flexCenter();
+      }
+    }
+
+    button {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: none;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      a {
+        color: black;
       }
     }
   }
@@ -157,6 +203,14 @@ header {
     background-color: black;
     position: sticky;
     top: 0;
+
+    img#logo {
+      align-self: flex-start;
+      width: 3rem;
+      height: 3rem;
+      position: absolute;
+      left: 5rem;
+    }
 
     ul {
       width: 50%;
@@ -181,10 +235,48 @@ header {
         }
       }
     }
+
+    // .nav-container {
+    //   @include flexRow(flex-end);
+    //   width: 100%;
+    //   height: 100%;
+
+    // .navbar-toggle#mobile-menu {
+    //   @include flexColumn(space-evenly);
+    //   flex: 1;
+    //   height: 6vh;
+    //   width: 10%;
+    //   margin-right: $marginSidesMobile;
+
+    //   span.bar {
+    //     height: 2.5px;
+    //     width: 20px;
+    //     background-color: white;
+    //     z-index: 1000;
+    //     transition-duration: 500ms;
+    //   }
+
+    //   span.bar.close#top {
+    //     transform: skewY(45deg) translateY(1.62vh);
+    //     transition-timing-function: cubic-bezier(0.68, 0, 0.33, 0.97);
+    //     height: 5px;
+    //   }
+
+    //   span.bar.close#mid {
+    //     opacity: 0;
+    //   }
+
+    //   span.bar.close#bot {
+    //     transform: skewY(-45deg) translateY(-1.62vh);
+    //     transition-timing-function: cubic-bezier(0.68, 0, 0.33, 0.97);
+    //     height: 5px;
+    //   }
+    // }
   }
 }
 
 .container {
+  // main page
   section.hero {
     display: flex;
     flex-direction: column;
@@ -200,6 +292,98 @@ header {
         left: 0;
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+
+  // single product
+  .single-product-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    height: 100%;
+
+    .product-header-info-container {
+      grid-column: 1 / span 4;
+      grid-row: 1;
+      height: 100%;
+      width: 100%;
+
+      legend {
+        width: 70%;
+        height: 100%;
+        margin: auto;
+        @include flexCenter();
+        flex-direction: column;
+        color: white;
+      }
+    }
+
+    .product-image-container {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 2;
+      height: 100%;
+      width: 100%;
+
+      img {
+        width: 100%;
+        max-width: 25rem;
+        height: 100%;
+        max-height: 25rem;
+        @include flexCenter();
+        margin: auto;
+      }
+    }
+
+    .info-product-container {
+      grid-column: 3 / span 2;
+      grid-row: 2 / span 2;
+      height: 100%;
+      width: 100%;
+      @include flexColumn(space-evenly);
+      color: white;
+
+      h2 {
+        color: $rightColor;
+      }
+
+      .description {
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        @include flexColumn(space-evenly);
+        align-items: flex-start;
+      }
+    }
+
+    .product-secondary-images-container {
+      grid-column: 1 / span 2;
+      grid-row: 4;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      grid-gap: 0.2rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        background: rgb(20, 20, 20);
+      }
+    }
+
+    .product-navigation-container {
+      grid-column: 3 / span 2;
+      grid-row: 4;
+      height: 100%;
+      width: 100%;
+      @include flexColumn(center);
+
+      .buttons-container {
+        @include flexRow(space-around);
+        width: 60%;
+        margin: auto;
       }
     }
   }
