@@ -1,0 +1,206 @@
+@import "./_variables";
+@import "./_mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  background: black;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.neonBtn {
+  height: $bigBtnHeight;
+  width: $bigBtnWidth;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 2px white;
+  background: linear-gradient(to right, $leftColor, $middleColor, $rightColor);
+  font-size: large;
+  font-weight: 550;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.7;
+  margin-top: 2em;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &::after {
+    content: "";
+    background: linear-gradient(
+      to right,
+      $leftColor,
+      $middleColor,
+      $rightColor
+    );
+    position: absolute;
+    top: 90%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(3em) rotateX(30deg) scale(1.1, 1);
+    filter: blur(2em);
+    opacity: 0.5;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    filter: blur(1em);
+  }
+}
+
+section.products-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 95%;
+  margin: auto;
+  gap: 1rem;
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 15rem;
+    height: 18.5rem;
+    border: 1px solid white;
+    background: none;
+
+    .products-title {
+      flex: 1;
+      width: 100%;
+      background: rgba(248, 41, 255, 0.9);
+      text-transform: uppercase;
+      @include flexCenter();
+    }
+
+    .products-image-container {
+      flex: auto;
+      img {
+        height: 15rem;
+        width: 100%;
+      }
+    }
+
+    .bottom-card-navigation {
+      flex: 1;
+      width: 100%;
+      display: flex;
+
+      .buy-text-container {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        background: rgba(9, 255, 0, 0.9);
+        text-transform: uppercase;
+        cursor: pointer;
+        @include flexCenter();
+      }
+
+      .detail-text-container {
+        flex: 1;
+        background: rgba(0, 250, 250, 0.9);
+        height: 100%;
+        width: 100%;
+        text-transform: uppercase;
+        cursor: pointer;
+        @include flexCenter();
+      }
+    }
+  }
+}
+
+header {
+  width: 100%;
+  border-bottom: 1px solid black;
+  height: 3rem;
+
+  nav {
+    @include flexRow(flex-end);
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: sticky;
+    top: 0;
+
+    ul {
+      width: 50%;
+      display: flex;
+      justify-content: space-evenly;
+
+      li {
+        font-size: 1em;
+
+        a {
+          text-transform: uppercase;
+          position: relative;
+
+          &::after {
+            @include underTextAnimation();
+          }
+
+          &:hover::after {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container {
+  section.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .into-text {
+      height: 65%;
+      width: 100%;
+      position: relative;
+      img {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

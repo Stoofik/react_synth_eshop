@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  background: black;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.neonBtn {
+  height: 4rem;
+  width: 15rem;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px 2px white;
+          box-shadow: 0px 0px 5px 2px white;
+  background: -webkit-gradient(linear, left top, right top, from(#ffae00), color-stop(red), to(#ea00ff));
+  background: linear-gradient(to right, #ffae00, red, #ea00ff);
+  font-size: large;
+  font-weight: 550;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.7;
+  margin-top: 2em;
+}
+
+.neonBtn:hover {
+  opacity: 0.8;
+}
+
+.neonBtn::after {
+  content: "";
+  background: -webkit-gradient(linear, left top, right top, from(#ffae00), color-stop(red), to(#ea00ff));
+  background: linear-gradient(to right, #ffae00, red, #ea00ff);
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: perspective(3em) rotateX(30deg) scale(1.1, 1);
+          transform: perspective(3em) rotateX(30deg) scale(1.1, 1);
+  -webkit-filter: blur(2em);
+          filter: blur(2em);
+  opacity: 0.5;
+}
+
+.neonBtn:hover::after {
+  opacity: 1;
+  -webkit-filter: blur(1em);
+          filter: blur(1em);
+}
+
+section.products-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 95%;
+  margin: auto;
+  gap: 1rem;
+}
+
+section.products-section .product-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 15rem;
+  height: 18.5rem;
+  border: 1px solid white;
+  background: none;
+}
+
+section.products-section .product-card .products-title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  background: rgba(248, 41, 255, 0.9);
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.products-section .product-card .products-image-container {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+section.products-section .product-card .products-image-container img {
+  height: 15rem;
+  width: 100%;
+}
+
+section.products-section .product-card .bottom-card-navigation {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section.products-section .product-card .bottom-card-navigation .buy-text-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  width: 100%;
+  background: rgba(9, 255, 0, 0.9);
+  text-transform: uppercase;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.products-section .product-card .bottom-card-navigation .detail-text-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: rgba(0, 250, 250, 0.9);
+  height: 100%;
+  width: 100%;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header {
+  width: 100%;
+  border-bottom: 1px solid black;
+  height: 3rem;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+header nav ul {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+header nav ul li {
+  font-size: 1em;
+}
+
+header nav ul li a {
+  text-transform: uppercase;
+  position: relative;
+}
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, from(#ffae00), color-stop(red), to(#ea00ff));
+  background: linear-gradient(to right, #ffae00, red, #ea00ff);
+  bottom: 0;
+  right: 0;
+  height: 0.1rem;
+  width: 0%;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.container section.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container section.hero .into-text {
+  height: 65%;
+  width: 100%;
+  position: relative;
+}
+
+.container section.hero .into-text img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=styles.css.map */
