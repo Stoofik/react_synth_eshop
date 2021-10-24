@@ -26,6 +26,11 @@ body {
   height: 100%;
 }
 
+.home-page {
+  width: 100%;
+  height: 100%;
+}
+
 section {
   width: 100%;
   height: 100%;
@@ -39,6 +44,51 @@ a {
   text-decoration: none;
   color: white;
   cursor: pointer;
+}
+
+.flash-success {
+  background: rgba(9, 255, 0, 0.5);
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  @include flexCenter();
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  @include flexCenter();
+
+  .info-panel {
+    background: rgba(255, 255, 255, 0.9);
+    height: 12rem;
+    width: 30rem;
+    margin: auto;
+    @include flexColumn(space-evenly);
+
+    h2 {
+      color: black;
+      text-transform: uppercase;
+      @include flexCenter();
+    }
+
+    .button-container {
+      width: 100%;
+      @include flexRow(space-around);
+    }
+  }
+
+  &.display {
+    display: flex;
+  }
+
+  &.display-none {
+    display: none;
+  }
 }
 
 .neonBtn {
@@ -73,7 +123,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    transform: perspective(3em) rotateX(30deg) scale(1.1, 1);
+    transform: perspective(3em) rotateX(20deg) scale(1.1, 1);
     filter: blur(2em);
     opacity: 0.5;
   }
@@ -134,14 +184,13 @@ section.products-section {
     flex-direction: column;
     flex-shrink: 0;
     width: 15rem;
-    height: 18.5rem;
+    height: 20rem;
     border: 1px solid white;
-    background: none;
 
     .products-title {
-      flex: 1;
       width: 100%;
       background: rgba(248, 41, 255, 0.9);
+      color: white;
       text-transform: uppercase;
       @include flexCenter();
     }
@@ -151,28 +200,51 @@ section.products-section {
       img {
         height: 15rem;
         width: 100%;
+
+        &:hover {
+          background: rgb(30, 30, 30);
+          height: 15.1rem;
+        }
       }
     }
 
     .bottom-card-navigation {
-      flex: 1;
       width: 100%;
       display: flex;
+      flex-direction: column;
 
-      .buy-text-container {
-        flex: 1;
-        height: 100%;
-        width: 100%;
-        background: rgba(9, 255, 0, 0.9);
-        @include flexCenter();
+      .product-info {
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        height: 1.5rem;
       }
 
-      .detail-text-container {
-        flex: 1;
-        background: rgba(0, 250, 250, 0.9);
-        height: 100%;
-        width: 100%;
-        @include flexCenter();
+      .navigation-container {
+        display: flex;
+        height: 1.5rem;
+
+        .buy-text-container {
+          height: 100%;
+          width: 100%;
+          background: rgba(9, 255, 0, 0.9);
+          @include flexCenter();
+
+          &:hover {
+            background: rgba(9, 255, 0, 1);
+          }
+        }
+
+        .detail-text-container {
+          background: rgba(0, 250, 250, 0.9);
+          height: 100%;
+          width: 100%;
+          @include flexCenter();
+
+          &:hover {
+            background: rgba(0, 250, 250, 1);
+          }
+        }
       }
     }
 
@@ -183,6 +255,7 @@ section.products-section {
       background: none;
       text-transform: uppercase;
       cursor: pointer;
+      font-weight: bold;
 
       a {
         color: black;
@@ -287,6 +360,21 @@ header {
       height: 65%;
       width: 100%;
       position: relative;
+
+      .intro {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -3.5rem;
+        margin-left: -15rem;
+        height: 7rem;
+        width: 30rem;
+        background: rgba(0, 0, 0, 0.75);
+        color: white;
+        text-transform: uppercase;
+        @include flexCenter();
+      }
+
       img {
         top: 0;
         left: 0;
@@ -370,6 +458,11 @@ header {
         width: 100%;
         height: 100%;
         background: rgb(20, 20, 20);
+
+        &:hover {
+          background: rgb(30, 30, 30);
+          cursor: pointer;
+        }
       }
     }
 
