@@ -7,20 +7,20 @@ const Cart = ({}) => {
     const [quantity, setQuantity] = useState(1);
     const [totalProductPrice, setTotalProductPrice] = useState(13);
     const [tax, setTax] = useState(3);
-    const [total, setTotal] = useState(30);
+    const [total, setTotal] = useState(17);
 
     const minusQuantity = () => {
         setQuantity(quantity - 1);
         setTotalProductPrice(totalProductPrice - 13);
         setTax(tax - 3);
-        setTotal(total - 29)
+        setTotal(total - totalProductPrice - tax)
     }
 
     const plusQuantity = () => {
         setQuantity(quantity + 1);
         setTotalProductPrice(totalProductPrice + 13);
         setTax(tax + 3)
-        setTotal(total + 29)
+        setTotal(total + totalProductPrice + tax)
     }
 
     return (
