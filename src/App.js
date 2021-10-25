@@ -2,7 +2,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Header from './components/Header';
 import Home from "./components/Home";
 import SingleProduct from './components/SingleProduct';
-
+import Cart from "./components/Cart"
 function App() {
 
   return (
@@ -13,8 +13,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/product">
+          <Route exact path="/product">
             <SingleProduct />
+          </Route>
+            <Route exact path="/cart">
+            <Cart />
           </Route>
         </Switch>
       </div>
