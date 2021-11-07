@@ -3,9 +3,9 @@ import { useRef, useState } from 'react';
 import { useHistory } from 'react-router';
 import Button from "./Button.js";
 import Modal from "./Modal";
-import image from "../static/images/synth_cap.png";
-import image_2 from "../static/images/synth_vest.png";
-import image_3 from "../static/images/synth_glasses.png";
+import image from "../../static/frontend/images/synth_cap.png";
+import image_2 from "../../static/frontend/images/synth_vest.png";
+import image_3 from "../../static/frontend/images/synth_glasses.png";
 
 
 const SingleProduct = ({title, price, inStock}) => {

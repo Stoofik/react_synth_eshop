@@ -4,15 +4,15 @@ import ProductCard from './ProductCard';
 import NeonButton from "./NeonButton";
 import Modal from "./Modal";
 
-import img from "../static/images/synth_bg.jpg";
-import synthHoodie  from "../static/images/synth_hoodie.png";
-import synthGlasses  from "../static/images/synth_glasses.png";
-import synthTShirt  from "../static/images/synth_t-shirt.png";
-import synthCap  from "../static/images/synth_cap.png";
-import synthShoes  from "../static/images/synth_shoes.png";
-import synthBag  from "../static/images/synth_bag.png";
-import synthVest  from "../static/images/synth_vest.png";
-import synthJacket  from "../static/images/synth_jacket.png";
+import img from "../../static/frontend/images/synth_bg.jpg";
+import synthHoodie  from "../../static/frontend/images/synth_hoodie.png";
+import synthGlasses  from "../../static/frontend/images/synth_glasses.png";
+import synthTShirt  from "../../static/frontend/images/synth_t-shirt.png";
+import synthCap  from "../../static/frontend/images/synth_cap.png";
+import synthShoes  from "../../static/frontend/images/synth_shoes.png";
+import synthBag  from "../../static/frontend/images/synth_bag.png";
+import synthVest  from "../../static/frontend/images/synth_vest.png";
+import synthJacket  from "../../static/frontend/images/synth_jacket.png";
 
 function Home() {
 
