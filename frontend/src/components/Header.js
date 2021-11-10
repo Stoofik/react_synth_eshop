@@ -1,4 +1,4 @@
-import logo from "../static/images/synth_logo.png"
+import logo from "../../static/frontend/images/synth_logo.png"
 
 const Header = () => {
     return (

@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "rest_framework",
-    "shop",
+    "shop.apps.ShopConfig",
+    "frontend.apps.FrontendConfig",
 ]
 
 MIDDLEWARE = [
@@ -133,8 +134,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
-
-# set up the frontend communication
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-]

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import productImg from "../static/images/synth_shoes.png"
+import productImg from "../../static/frontend/images/synth_shoes.png"
 
 const CartItem = ({quantity, totalProductPrice, minusQuantity, plusQuantity}) => {
 
